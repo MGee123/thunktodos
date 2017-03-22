@@ -1,11 +1,24 @@
-export const addTodo = (todo) => ({ type: 'todos/ADD_TODO', payload: todo })
+import _ from 'lodash'
 
-export const updateTodoText = (todoText) => ({ type: 'todos/UPDATE_TODO_TEXT', payload: todoText })
+export const addTodo = (todo) => {
+  return (dispatch) =>
+    dispatch({ type: 'todos/ADD_TODO', payload: todo })
+}
 
-export const completeTodo = (todoId) => ({ type: 'todos/COMPLETE_TODO', payload: todoId })
+export const updateTodoText = (todoText) => {
+  return (dispatch) =>
+    dispatch({ type: 'todos/UPDATE_TODO_TEXT', payload: todoText })
+}
 
-export const deleteTodo = (todoId) => ({ type: 'todos/DELETE_TODO', payload: todoId })
+export const completeTodo = (todoId) => {
+  return (dispatch) =>
+    dispatch({ type: 'todos/COMPLETE_TODO', payload: todoId })
+}
 
+export const deleteTodo = (todoId) => {
+  return (dispatch) =>
+    dispatch({ type: 'todos/DELETE_TODO', payload: todoId })
+}
 export function CompleteTodo(todoId)(myStore.dispatch) {
 	return (dispatch) => {
 		dispatch(updateTodoText());
